@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commission Calculator</title>
 <style>
   :root{
@@ -110,6 +111,25 @@
 
   .note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5;}
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px;}
+
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+
+  @media (max-width: 600px){
+    body{padding:16px 10px;}
+    header{gap:12px;margin-bottom:20px;}
+    .logo-box{width:84px;height:54px;}
+    h1{font-size:19px;}
+    .sub{font-size:12.5px;}
+    .card{padding:16px;border-radius:12px;}
+    input[type="text"]{font-size:22px;padding:14px;}
+    select{font-size:16px;padding:14px 8px;}
+    .results{grid-template-columns:1fr;gap:10px;}
+    .stat{padding:16px 18px;}
+    .stat .label{font-size:12.5px;}
+    .stat .value{font-size:26px;}
+    table{font-size:13px;min-width:520px;}
+    th,td{padding:10px 6px;}
+  }
 </style>
 </head>
 <body>
@@ -159,12 +179,14 @@
 
   <div class="card">
     <label style="margin-bottom:10px;">Bracket breakdown</label>
-    <table>
-      <thead>
-        <tr><th>Bracket</th><th>Rate</th><th>Taxable slice</th><th>Commission from slice</th></tr>
-      </thead>
-      <tbody id="breakdownBody"></tbody>
-    </table>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Bracket</th><th>Rate</th><th>Taxable slice</th><th>Commission from slice</th></tr>
+        </thead>
+        <tbody id="breakdownBody"></tbody>
+      </table>
+    </div>
     <div class="note">
       ----------------
     </div>
